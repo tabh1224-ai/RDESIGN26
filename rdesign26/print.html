@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인쇄물 | R DESIGN</title>
+  <meta name="description" content="명함, 전단지, 안내물 등 실제 제작 결과물 중심의 R DESIGN 인쇄 포트폴리오입니다.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      border: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+    }
+
+    .header-inner {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(to bottom, #fafafa, #ffffff);
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      color: #555;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+      max-width: 700px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .featured-card {
+      border: 1px solid #eee;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .featured-body {
+      padding: 28px;
+    }
+
+    .featured-body span {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .featured-body h2 {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .featured-body p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .work-card {
+      border: 1px solid #eee;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .work-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .work-info {
+      padding: 24px;
+    }
+
+    .work-info h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .work-info p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .point-box {
+      margin-top: 60px;
+      padding: 34px 28px;
+      border: 1px solid #eee;
+      border-radius: 24px;
+      background: #fafafa;
+    }
+
+    .point-box h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .point-item {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 22px 18px;
+    }
+
+    .point-item h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .point-item p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .bottom-actions {
+      margin-top: 50px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all .25s ease;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    .btn-light:hover {
+      border-color: #111;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 30px 0;
+      text-align: center;
+      color: #777;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .featured-body h2 {
+        font-size: 24px;
+      }
+
+      .work-info h3 {
+        font-size: 20px;
+      }
+
+      .point-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">R DESIGN</a>
+      <nav class="nav">
+        <a href="index.html">홈</a>
+        <a href="detail.html">상세페이지</a>
+        <a href="branding.html">브랜딩</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">PRINT DESIGN PORTFOLIO</span>
+      <h1>디자인이 결과물로 완성됩니다</h1>
+      <p>
+        화면에서 끝나는 디자인이 아니라
+        실제로 제작되어 전달되는 결과물까지 고려합니다.
+
+        명함, 전단지, 안내물까지
+        실사용 중심으로 완성도 높은 인쇄물을 제작합니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">대표 작업</h2>
+      <p class="section-desc">실제 제작 결과와 완성도를 고려해 정리한 인쇄 포트폴리오입니다.</p>
+
+      <div class="featured-card">
+        <div class="featured-image">
+          <img src="images/print-main.jpg" alt="인쇄 디자인 대표 작업 이미지">
+        </div>
+        <div class="featured-body">
+          <span>FEATURED WORK</span>
+          <h2>실제 제작 중심 인쇄 디자인</h2>
+          <p>
+            디자인 시안만 보여주는 것이 아니라
+            실제 인쇄 결과까지 고려해 제작한 작업입니다.
+
+            재질, 색감, 마감까지 포함해
+            실물에서 더 완성도 있게 보이도록 설계합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <img src="images/print-01.jpg" alt="명함 인쇄 작업 이미지">
+          <div class="work-info">
+            <h3>첫인상을 결정하는 명함</h3>
+            <p>
+              고객을 처음 만나는 순간,
+              브랜드 이미지를 자연스럽게 전달할 수 있도록
+              인상과 정보 전달을 함께 고려해 제작합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="images/print-02.jpg" alt="안내 인쇄물 작업 이미지">
+          <div class="work-info">
+            <h3>전달력 중심 디자인</h3>
+            <p>
+              정보가 빠르게 읽히고 핵심이 바로 보이도록
+              구성과 가독성을 우선으로 설계한 인쇄물 작업입니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="images/print-03.jpg" alt="실물 인쇄 결과 이미지">
+          <div class="work-info">
+            <h3>실물 완성도 중심</h3>
+            <p>
+              화면과 실제 인쇄 결과의 차이를 줄이고,
+              인쇄 후에도 높은 퀄리티가 유지되도록
+              세부 디테일까지 고려해 제작합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <h3>인쇄 디자인 포인트</h3>
+        <div class="point-list">
+          <div class="point-item">
+            <h4>출력 기준 설계</h4>
+            <p>인쇄 환경을 고려해 색감, 해상도, 여백까지 정확하게 맞춰 결과물을 준비합니다.</p>
+          </div>
+          <div class="point-item">
+            <h4>재질과 마감 고려</h4>
+            <p>종이 재질, 코팅, 후가공까지 함께 생각해 실물에서 더 잘 보이도록 구성합니다.</p>
+          </div>
+          <div class="point-item">
+            <h4>실사용 중심</h4>
+            <p>예쁜 디자인에 그치지 않고 실제 전달력과 활용성을 함께 만드는 인쇄물을 목표로 합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-actions">
+        <a href="index.html" class="btn btn-light">← 메인으로</a>
+        <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener" class="btn btn-dark">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © R DESIGN
+  </footer>
+
+</body>
+</html>
