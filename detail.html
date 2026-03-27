@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상세페이지 | R DESIGN</title>
+  <meta name="description" content="식품, 패션, 밀키트 등 다양한 업종의 상세페이지 포트폴리오를 소개합니다.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      border: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+    }
+
+    .header-inner {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(to bottom, #fafafa, #ffffff);
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      color: #555;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+      max-width: 700px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .featured-card {
+      border: 1px solid #eee;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .featured-body {
+      padding: 28px;
+    }
+
+    .featured-body span {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .featured-body h2 {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .featured-body p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .work-card {
+      border: 1px solid #eee;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .work-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .work-info {
+      padding: 24px;
+    }
+
+    .work-info h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .work-info p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .point-box {
+      margin-top: 60px;
+      padding: 34px 28px;
+      border: 1px solid #eee;
+      border-radius: 24px;
+      background: #fafafa;
+    }
+
+    .point-box h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .point-item {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 22px 18px;
+    }
+
+    .point-item h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .point-item p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .bottom-actions {
+      margin-top: 50px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all .25s ease;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    .btn-light:hover {
+      border-color: #111;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 30px 0;
+      text-align: center;
+      color: #777;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .featured-body h2 {
+        font-size: 24px;
+      }
+
+      .work-info h3 {
+        font-size: 20px;
+      }
+
+      .point-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">R DESIGN</a>
+      <nav class="nav">
+        <a href="index.html">홈</a>
+        <a href="branding.html">브랜딩</a>
+        <a href="print.html">인쇄물</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">DETAIL PAGE PORTFOLIO</span>
+      <h1>상세페이지 디자인 포트폴리오</h1>
+      <p>
+        식품, 패션, 밀키트 등 다양한 업종의 상세페이지를
+        제품 특징과 구매 포인트가 잘 보이도록 구조 중심으로 설계했습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">대표 작업</h2>
+      <p class="section-desc">가독성과 전환 흐름을 함께 고려한 메인 포트폴리오입니다.</p>
+
+      <div class="featured-card">
+        <div class="featured-image">
+          <img src="images/detail-main.jpg" alt="상세페이지 대표 작업 이미지">
+        </div>
+        <div class="featured-body">
+          <span>FEATURED WORK</span>
+          <h2>패션 상세페이지</h2>
+          <p>
+            미니멀한 레이아웃과 소재 중심 정보 전달을 통해
+            브랜드 무드와 제품 디테일이 동시에 보이도록 구성한 작업입니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <img src="images/detail-01.jpg" alt="식품 상세페이지 작업 이미지">
+          <div class="work-info">
+            <h3>식품 상세페이지</h3>
+            <p>
+              원재료, 구성품, 조리 과정, 신뢰 요소를 한눈에 전달할 수 있도록
+              정보 구조를 명확하게 정리한 식품형 상세페이지입니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="images/detail-02.jpg" alt="패션 상세페이지 작업 이미지">
+          <div class="work-info">
+            <h3>패션 상세페이지</h3>
+            <p>
+              소재 포인트, 착용 이미지, 컬러/사이즈 안내가 자연스럽게 이어지도록
+              구성한 의류 카테고리 중심 작업입니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="images/detail-03.jpg" alt="밀키트 상세페이지 작업 이미지">
+          <div class="work-info">
+            <h3>밀키트 상세페이지</h3>
+            <p>
+              구매자 입장에서 궁금한 조리 시간, 구성, 후기 포인트를
+              빠르게 파악할 수 있도록 설계한 판매형 상세페이지입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <h3>작업 포인트</h3>
+        <div class="point-list">
+          <div class="point-item">
+            <h4>구조 중심</h4>
+            <p>첫 화면부터 특징, 디테일, 신뢰 요소까지 읽는 흐름이 자연스럽게 이어지도록 구성합니다.</p>
+          </div>
+          <div class="point-item">
+            <h4>업종별 톤 조절</h4>
+            <p>식품, 패션, 서비스 등 카테고리에 따라 무드와 정보 강조 포인트를 다르게 설계합니다.</p>
+          </div>
+          <div class="point-item">
+            <h4>전환 고려</h4>
+            <p>예쁜 화면보다 구매 포인트가 잘 전달되도록 실제 판매 흐름을 우선으로 디자인합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-actions">
+        <a href="index.html" class="btn btn-light">← 메인으로</a>
+        <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener" class="btn btn-dark">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © R DESIGN
+  </footer>
+
+</body>
+</html>
