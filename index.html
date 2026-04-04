@@ -1,602 +1,173 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>R DESIGN | 상세페이지 · 배너 · 웹디자인 제작</title>
-    <meta name="naver-site-verification" content="24c03d96054396b43d964fc0d9a6b1e4c4c686d3" />
 
-    <meta name="description" content="상세페이지, 배너, 웹디자인, 로고까지 전환율 중심 디자인 제작. 빠른 시안, 깔끔한 결과로 매출을 만듭니다.">
-
-    <meta name="keywords" content="상세페이지 제작, 배너 디자인, 웹디자인, 로고 디자인, 인쇄 디자인, 랜딩페이지">
-
-    <meta property="og:title" content="R DESIGN">
-    <meta property="og:description" content="디자인이 아니라 매출을 만듭니다">
-    <meta property="og:image" content="https://rdesign26.com/메인이미지.jpg">
-    <meta property="og:url" content="https://rdesign26.com">
-    
-    <link rel="icon" href="./images/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="./images/favicon.png">
-  
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R DESIGN | 디자인이 아니라, 매출을 만듭니다</title>
-  <meta name="description" content="상세페이지, 브랜딩, 인쇄물까지 브랜드를 결과로 연결하는 디자인 포트폴리오입니다.">
+
+  <title>R DESIGN | 상세페이지 · 배너 · 웹디자인 제작</title>
+  <meta name="naver-site-verification" content="24c03d96054396b43d964fc0d9a6b1e4c4c686d3" />
+  <meta name="description" content="상세페이지, 배너, 웹디자인, 로고까지 전환율 중심 디자인 제작. 빠른 시안, 깔끔한 결과로 매출을 만듭니다.">
+
+  <meta property="og:title" content="R DESIGN">
+  <meta property="og:description" content="디자인이 아니라 매출을 만듭니다">
+  <meta property="og:image" content="https://rdesign26.com/메인이미지.jpg">
+  <meta property="og:url" content="https://rdesign26.com">
+
+  <!-- ✅ favicon 절대경로 -->
+  <link rel="shortcut icon" href="https://rdesign26.com/images/favicon.png">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Noto Sans KR', sans-serif; color:#111; background:#fff; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; border:0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      border: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-      z-index: 100;
+      position:sticky; top:0;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #eee;
+      z-index:100;
     }
 
     .header-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-    }
+    .logo { font-size:24px; font-weight:900; }
 
-    .nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav a {
-      font-size: 14px;
-      color: #111;
-      font-weight: 500;
-    }
+    .nav { display:flex; gap:20px; }
+    .nav a { font-size:14px; font-weight:500; }
 
     .hero {
-      padding: 110px 0 90px;
-      background: linear-gradient(to bottom, #fafafa, #ffffff);
+      padding:110px 0 90px;
+      background:linear-gradient(to bottom,#fafafa,#fff);
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #f1f1f1;
-      color: #555;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
+      display:grid;
+      grid-template-columns:1.05fr 1fr;
+      gap:48px;
+      align-items:center;
     }
 
     .hero h1 {
-      font-size: 58px;
-      font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
+      font-size:58px;
+      font-weight:900;
+      line-height:1.1;
+      margin-bottom:18px;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #666;
-      margin-bottom: 30px;
-      max-width: 620px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
+      font-size:18px;
+      color:#666;
+      margin-bottom:30px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 150px;
-      height: 50px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 15px;
-      transition: all .25s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:50px;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:15px;
     }
 
-    .btn-dark {
-      background: #111;
-      color: #fff;
-    }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-light { background:#fff; border:1px solid #ddd; }
 
-    .btn-dark:hover {
-      background: #333;
-    }
-
-    .btn-light {
-      background: #fff;
-      color: #111;
-      border: 1px solid #ddd;
-    }
-
-    .btn-light:hover {
-      border-color: #111;
-    }
-
-    .hero-note {
-      font-size: 14px;
-      color: #888;
-    }
-
-    .hero-card {
-      position: relative;
-      border: 1px solid #eee;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
-      padding: 18px;
-    }
-
-    .hero-card img {
-      width: 100%;
-      border-radius: 18px;
-    }
-
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-title {
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 34px;
-    }
+    .section { padding:90px 0; }
 
     .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .portfolio-card {
-      display: block;
-      border: 1px solid #eee;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fff;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .portfolio-thumb {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #f7f7f7;
-    }
-
-    .portfolio-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .portfolio-body {
-      padding: 22px;
-    }
-
-    .portfolio-body span {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    .portfolio-body h3 {
-      font-size: 25px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .portfolio-body p {
-      font-size: 15px;
-      color: #666;
-    }
-
-    .strength-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .strength-card {
-      border: 1px solid #eee;
-      border-radius: 22px;
-      background: #fff;
-      padding: 28px 24px;
-    }
-
-    .strength-card h3 {
-      font-size: 21px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .strength-card p {
-      font-size: 15px;
-      color: #666;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .process-card {
-      border: 1px solid #eee;
-      border-radius: 22px;
-      background: #fff;
-      padding: 26px 22px;
-    }
-
-    .process-number {
-      font-size: 13px;
-      font-weight: 800;
-      color: #999;
-      margin-bottom: 8px;
-    }
-
-    .process-card h4 {
-      font-size: 19px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .process-card p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    .cta-box {
-      background: #111;
-      color: #fff;
-      border-radius: 30px;
-      padding: 70px 40px;
-      text-align: center;
-    }
-
-    .cta-box h2 {
-      font-size: 40px;
-      font-weight: 900;
-      margin-bottom: 14px;
-      letter-spacing: -1px;
-    }
-
-    .cta-box p {
-      color: rgba(255,255,255,0.75);
-      font-size: 16px;
-      margin-bottom: 26px;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
 
     footer {
-      border-top: 1px solid #eee;
-      padding: 30px 0;
-      text-align: center;
-      color: #777;
-      margin-top: 90px;
+      border-top:1px solid #eee;
+      margin-top:80px;
     }
 
-    .portfolio-more {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    }
-
-    @media (max-width: 1024px) {
+    @media (max-width:768px){
       .hero-grid,
-      .portfolio-grid,
-      .strength-grid,
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
+      .portfolio-grid {
+        grid-template-columns:1fr;
       }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 0 60px;
-      }
-
-      .hero-grid,
-      .portfolio-grid,
-      .strength-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .section {
-        padding: 65px 0;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .cta-box {
-        padding: 50px 24px;
-      }
-
-      .cta-box h2 {
-        font-size: 30px;
-      }
+      .hero h1 { font-size:34px; }
     }
   </style>
+
 </head>
 <body>
 
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="logo">R DESIGN</a>
-      <nav class="nav">
-        <a href="#portfolio">포트폴리오</a>
-        <a href="https://blog.naver.com/designws_" target="_blank" rel="noopener">작업물</a>
-        <a href="#strength">강점</a>
-        <a href="#process">진행방식</a>
-        <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener">문의하기</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">R DESIGN</a>
+    <nav class="nav">
+      <a href="#portfolio">포트폴리오</a>
+      <a href="https://blog.naver.com/designws_" target="_blank">작업물</a>
+      <a href="#strength">강점</a>
+      <a href="#process">진행방식</a>
+      <a href="http://pf.kakao.com/_MPJZX" target="_blank">문의하기</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="container hero-grid">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>디자인이 아니라,<br>매출을 만듭니다</h1>
+      <p>
+        상세페이지, 브랜딩, 인쇄물까지  
+        브랜드를 결과로 연결하는 디자인을 만듭니다.
+      </p>
+
       <div>
-        <span class="hero-badge">SALES-DRIVEN DESIGN STUDIO</span>
-        <h1>디자인이 아니라,<br>매출을 만듭니다</h1>
-        <p>
-          상세페이지, 브랜딩, 인쇄물까지  
-          보기 좋은 디자인을 넘어서  
-          브랜드를 결과로 연결하는 작업을 만듭니다.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#portfolio" class="btn btn-dark">포트폴리오 보기</a>
-          <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener" class="btn btn-light">문의하기</a>
-        </div>
-
-        <div class="hero-note">
-          상세페이지 · 브랜딩 · 인쇄물 · 실무형 디자인 작업 가능
-        </div>
-        <div style="font-size:14px; color:#888; margin-top:10px;">
-        👉 빠르면 당일 시안 전달 가능합니다
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <img src="images/hero-main.jpg" alt="R DESIGN 대표 포트폴리오 이미지">
+        <a href="#portfolio" class="btn btn-dark">포트폴리오 보기</a>
+        <a href="http://pf.kakao.com/_MPJZX" target="_blank" class="btn btn-light">문의하기</a>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="portfolio">
-  <div class="container">
-    <h2 class="section-title">포트폴리오</h2>
-    <p class="section-desc">
-      업종과 목적에 맞춰 설계한 작업을 카테고리별로 확인할 수 있습니다.
-    </p>
-
-    <div class="portfolio-grid">
-      <a href="detail.html" class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="images/portfolio-detail.jpg" alt="상세페이지 포트폴리오">
-        </div>
-        <div class="portfolio-body">
-          <span>DETAIL PAGE</span>
-          <h3>상세페이지</h3>
-          <p>구조와 전환 흐름을 고려해 구매로 이어지도록 설계한 작업입니다.</p>
-        </div>
-      </a>
-
-      <a href="branding.html" class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="images/portfolio-branding.jpg" alt="브랜딩 포트폴리오">
-        </div>
-        <div class="portfolio-body">
-          <span>BRANDING</span>
-          <h3>브랜딩</h3>
-          <p>고객이 기억하고 선택하게 만드는 브랜드 인상을 설계합니다.</p>
-        </div>
-      </a>
-
-      <a href="print.html" class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="images/portfolio-print.jpg" alt="인쇄물 포트폴리오">
-        </div>
-        <div class="portfolio-body">
-          <span>PRINT DESIGN</span>
-          <h3>인쇄물</h3>
-          <p>실제 제작 결과물까지 고려해 완성도 높은 인쇄물을 만듭니다.</p>
-        </div>
-      </a>
+    <div>
+      <img src="images/hero-main.jpg" alt="">
     </div>
-
-    <!-- 여기 추가 -->
-    <div class="portfolio-more">
-      <a href="https://blog.naver.com/designws_" target="_blank" rel="noopener" class="btn btn-dark">
-        실제 작업물 더보기
-      </a>
-    </div>
-
   </div>
 </section>
 
-  <section class="section" id="strength" style="background:#fafafa;">
-    <div class="container">
-      <h2 class="section-title">왜 R DESIGN인가</h2>
-      <p class="section-desc">
-        단순 작업 나열이 아니라, 실제 의뢰에서 중요한 기준으로 설계합니다.
-      </p>
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="portfolio-grid">
 
-      <div class="strength-grid">
-        <div class="strength-card">
-          <h3>실무 중심 디자인</h3>
-          <p>
-            예쁘기만 한 화면이 아니라
-            실제 전달력과 활용도를 우선으로 작업합니다.
-          </p>
-        </div>
+      <a href="detail.html">
+        <img src="images/portfolio-detail.jpg">
+        <h3>상세페이지</h3>
+      </a>
 
-        <div class="strength-card">
-          <h3>브랜드 맞춤 설계</h3>
-          <p>
-            업종과 타겟에 맞는 분위기와 구조로
-            브랜드가 더 잘 보이도록 만듭니다.
-          </p>
-        </div>
+      <a href="branding.html">
+        <img src="images/portfolio-branding.jpg">
+        <h3>브랜딩</h3>
+      </a>
 
-        <div class="strength-card">
-          <h3>빠른 진행 가능</h3>
-          <p>
-            작업 내용에 따라 빠르게 방향을 잡고
-            1차 시안을 신속하게 전달합니다.
-          </p>
-        </div>
-      </div>
+      <a href="print.html">
+        <img src="images/portfolio-print.jpg">
+        <h3>인쇄물</h3>
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="process">
-    <div class="container">
-      <h2 class="section-title">진행 방식</h2>
-      <p class="section-desc">
-        자료가 완벽하지 않아도 괜찮습니다. 필요한 방향부터 같이 정리해드립니다.
-      </p>
-
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="process-number">01</div>
-          <h4>상담</h4>
-          <p>원하는 방향, 업종, 참고 자료를 간단히 확인합니다.</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">02</div>
-          <h4>구조 설계</h4>
-          <p>어떤 흐름으로 보여줄지 정리하고 작업 방향을 잡습니다.</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">03</div>
-          <h4>시안 제작</h4>
-          <p>정리된 방향을 바탕으로 1차 시안을 제작해 공유합니다.</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">04</div>
-          <h4>수정 및 마감</h4>
-          <p>피드백 반영 후 최종본까지 깔끔하게 정리합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="cta-box">
-        <h2>브랜드에 맞는 디자인이 필요하신가요?</h2>
-        <p>
-          상세페이지, 브랜딩, 인쇄물까지  
-          목적에 맞는 방향으로 빠르게 안내해드립니다.
-        </p>
-        <p style="margin-top:10px; font-size:14px; color:#aaa;">
-        소규모부터 브랜드까지 다양한 작업 경험 보유
-        </p>
-        <div class="cta-buttons">
-          <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener" class="btn btn-light">카카오톡 문의하기</a>
-          <a href="#portfolio" class="btn btn-dark">포트폴리오 다시 보기</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer style="border-top:1px solid #eee; margin-top:80px;">
+<footer>
   <div style="max-width:1200px; margin:0 auto; padding:50px 20px; text-align:center;">
 
     <div style="font-weight:900; font-size:18px; margin-bottom:12px;">
@@ -604,7 +175,9 @@
     </div>
 
     <div style="font-size:14px; color:#666; line-height:1.8;">
-      대표: 강효정 · rdesign26@naver.com · 010-4163-3224
+      대표: 강효정<br>
+      rdesign26@naver.com<br>
+      010-4163-3224
     </div>
 
     <div style="margin-top:6px; font-size:13px; color:#888;">

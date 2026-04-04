@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# 검색 제외할 것 (없으면 생략 가능)
+Disallow: /admin
+Disallow: /cgi-bin
+
 Sitemap: https://rdesign26.com/sitemap.xml

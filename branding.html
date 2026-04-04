@@ -1,425 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>브랜딩 | R DESIGN</title>
-  <meta name="description" content="로고, 명함, 패키지, 브랜드 비주얼까지 정리한 R DESIGN 브랜딩 포트폴리오입니다.">
+
+  <title>브랜딩 포트폴리오 | R DESIGN</title>
+  <meta name="description" content="로고, 명함, 패키지까지 브랜드를 설계하는 R DESIGN 브랜딩 포트폴리오입니다.">
+
+  <meta property="og:title" content="브랜딩 포트폴리오 | R DESIGN">
+  <meta property="og:description" content="브랜드를 설계하는 디자인 작업">
+  <meta property="og:image" content="https://rdesign26.com/images/branding-main.jpg">
+  <meta property="og:url" content="https://rdesign26.com/branding.html">
+
+  <!-- ✅ 파비콘 절대경로 -->
+  <link rel="shortcut icon" href="https://rdesign26.com/images/favicon.png">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Noto Sans KR', sans-serif; color:#111; background:#fff; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      border: 0;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-      z-index: 100;
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #eee;
     }
 
     .header-inner {
-      height: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      height:70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .logo {
-      font-weight: 900;
-      font-size: 24px;
-      letter-spacing: 0.5px;
-    }
+    .logo { font-weight:900; font-size:24px; }
 
-    .nav a {
-      margin-left: 20px;
-      font-size: 14px;
-      color: #111;
-    }
+    .nav a { margin-left:20px; font-size:14px; }
 
     .hero {
-      padding: 90px 0 70px;
-      background: linear-gradient(to bottom, #fafafa, #ffffff);
-    }
-
-    .hero-label {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #f1f1f1;
-      color: #555;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
+      padding:90px 0 70px;
+      background:linear-gradient(to bottom,#fafafa,#fff);
     }
 
     .hero h1 {
-      font-size: 46px;
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 18px;
-      letter-spacing: -1px;
+      font-size:46px;
+      font-weight:900;
+      margin-bottom:18px;
     }
 
-    .hero p {
-      color: #666;
-      font-size: 17px;
-      max-width: 700px;
-    }
+    .hero p { color:#666; font-size:17px; }
 
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
-    }
-
-    .section-desc {
-      color: #666;
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
+    .section { padding:80px 0; }
 
     .featured-card {
-      border: 1px solid #eee;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      border:1px solid #eee;
+      border-radius:24px;
+      overflow:hidden;
+      background:#fff;
     }
 
-    .featured-image img {
-      width: 100%;
-      height: auto;
-    }
-
-    .featured-body {
-      padding: 28px;
-    }
-
-    .featured-body span {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #888;
-      margin-bottom: 10px;
-    }
-
-    .featured-body h2 {
-      font-size: 30px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .featured-body p {
-      color: #666;
-      font-size: 15px;
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      margin-top: 36px;
-    }
+    .featured-body { padding:28px; }
 
     .work-card {
-      border: 1px solid #eee;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      border:1px solid #eee;
+      border-radius:24px;
+      overflow:hidden;
+      background:#fff;
+      margin-top:20px;
     }
 
-    .work-card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .work-info {
-      padding: 24px;
-    }
-
-    .work-info h3 {
-      font-size: 24px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .work-info p {
-      color: #666;
-      font-size: 15px;
-    }
-
-    .point-box {
-      margin-top: 60px;
-      padding: 34px 28px;
-      border: 1px solid #eee;
-      border-radius: 24px;
-      background: #fafafa;
-    }
-
-    .point-box h3 {
-      font-size: 24px;
-      margin-bottom: 18px;
-      font-weight: 900;
-    }
-
-    .point-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .point-item {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 18px;
-      padding: 22px 18px;
-    }
-
-    .point-item h4 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      font-weight: 800;
-    }
-
-    .point-item p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    .bottom-actions {
-      margin-top: 50px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 150px;
-      height: 50px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 15px;
-      transition: all .25s ease;
-    }
-
-    .btn-dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .btn-dark:hover {
-      background: #333;
-    }
-
-    .btn-light {
-      background: #fff;
-      color: #111;
-      border: 1px solid #ddd;
-    }
-
-    .btn-light:hover {
-      border-color: #111;
-    }
+    .work-info { padding:24px; }
 
     footer {
-      border-top: 1px solid #eee;
-      padding: 30px 0;
-      text-align: center;
-      color: #777;
-      margin-top: 80px;
+      border-top:1px solid #eee;
+      margin-top:80px;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        padding: 70px 0 50px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .featured-body h2 {
-        font-size: 24px;
-      }
-
-      .work-info h3 {
-        font-size: 20px;
-      }
-
-      .point-list {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        display: none;
-      }
+    @media (max-width:768px){
+      .nav { display:none; }
+      .hero h1 { font-size:34px; }
     }
   </style>
+
 </head>
 <body>
 
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="logo">R DESIGN</a>
-      <nav class="nav">
-        <a href="index.html">홈</a>
-        <a href="detail.html">상세페이지</a>
-        <a href="print.html">인쇄물</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">R DESIGN</a>
+    <nav class="nav">
+      <a href="index.html">홈</a>
+      <a href="detail.html">상세페이지</a>
+      <a href="print.html">인쇄물</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="container">
-      <span class="hero-label">BRANDING PORTFOLIO</span>
-      <h1>디자인이 아니라, 브랜드를 만듭니다</h1>
-      <p>
-        고객이 기억하고 선택하게 만드는
-        브랜드 이미지를 설계합니다.
+<section class="hero">
+  <div class="container">
+    <h1>디자인이 아니라, 브랜드를 만듭니다</h1>
+    <p>
+      로고부터 패키지, 인쇄물까지  
+      브랜드를 하나의 흐름으로 설계합니다.
+    </p>
+  </div>
+</section>
 
-        로고부터 패키지, 인쇄물까지
-        하나의 흐름으로 연결합니다
-      </p>
-    </div>
-  </section>
+<section class="section">
+  <div class="container">
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">대표 작업</h2>
-      <p class="section-desc">브랜드 무드와 확장성을 고려해 구성한 메인 포트폴리오입니다.</p>
-
-      <div class="featured-card">
-        <div class="featured-image">
-          <img src="images/branding-main.jpg" alt="브랜딩 대표 작업 이미지">
-        </div>
-        <div class="featured-body">
-          <span>FEATURED WORK</span>
-          <h2>브랜드 전체를 설계하는 디자인</h2>
-          <p>
-            단순한 로고 제작이 아니라,
-            브랜드가 어떻게 보이고 기억될지까지 설계합니다.
-
-            명함, 패키지, 인쇄물까지 하나의 흐름으로 연결해
-            브랜드 인상을 명확하게 만듭니다.
-          </p>
-        </div>
-      </div>
-
-      <div class="work-grid">
-        <div class="work-card">
-          <img src="images/branding-01.jpg" alt="브랜딩 작업 이미지 1">
-          <div class="work-info">
-            <h3>브랜드 첫인상 설계</h3>
-            <p>
-              처음 보는 순간 브랜드가 어떤 느낌인지
-              바로 전달되도록 전체 이미지를 구성합니다.
-            </p>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <img src="images/branding-02.jpg" alt="브랜딩 작업 이미지 2">
-          <div class="work-info">
-            <h3>브랜드 경험 확장</h3>
-            <p>
-              제품, 포장, 인쇄물까지 연결해
-              고객이 브랜드를 직접 경험하게 만듭니다.
-            </p>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <img src="images/branding-03.jpg" alt="브랜딩 작업 이미지 3">
-          <div class="work-info">
-            <h3>기억에 남는 디자인</h3>
-            <p>
-              한 번 본 브랜드가 쉽게 잊히지 않도록
-              전체적인 무드와 인상을 설계합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="point-box">
-        <h3>브랜딩이 중요한 이유</h3>
-        <div class="point-list">
-          <div class="point-item">
-            <h4>기억되는 브랜드</h4>
-            <p>단순한 디자인이 아니라 고객에게 인식되는 브랜드를 만듭니다.</p>
-          </div>
-          <div class="point-item">
-            <h4>선택되는 이유</h4>
-            <p>경쟁이 많은 시장에서 선택받을 수 있는 이미지를 설계합니다.</p>
-          </div>
-          <div class="point-item">
-            <h4>일관된 인상</h4>
-            <p>모든 디자인이 하나의 브랜드로 느껴지도록 연결합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bottom-actions">
-        <a href="index.html" class="btn btn-light">← 메인으로</a>
-        <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener" class="btn btn-dark">문의하기</a>
+    <div class="featured-card">
+      <img src="images/branding-main.jpg" alt="">
+      <div class="featured-body">
+        <h2>브랜드 전체 설계</h2>
+        <p>브랜드 인상을 만들고 확장까지 고려한 디자인 작업</p>
       </div>
     </div>
-  </section>
 
-  <footer style="border-top:1px solid #eee; margin-top:80px;">
+    <div class="work-card">
+      <img src="images/branding-01.jpg">
+      <div class="work-info">
+        <h3>브랜드 첫인상 설계</h3>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="images/branding-02.jpg">
+      <div class="work-info">
+        <h3>브랜드 경험 확장</h3>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="images/branding-03.jpg">
+      <div class="work-info">
+        <h3>기억에 남는 디자인</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
   <div style="max-width:1200px; margin:0 auto; padding:50px 20px; text-align:center;">
 
     <div style="font-weight:900; font-size:18px; margin-bottom:12px;">
@@ -427,7 +156,9 @@
     </div>
 
     <div style="font-size:14px; color:#666; line-height:1.8;">
-      대표: 강효정 · rdesign26@naver.com · 010-4163-3224
+      대표: 강효정<br>
+      rdesign26@naver.com<br>
+      010-4163-3224
     </div>
 
     <div style="margin-top:6px; font-size:13px; color:#888;">
